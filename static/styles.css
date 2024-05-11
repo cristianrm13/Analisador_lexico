@@ -1,0 +1,208 @@
+.body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0b2725;
+}
+.titulo{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #39c5bb;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0.1px;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #39c5bb, 0 0 10px #39c5bb, 0 0 15px #39c5bb;
+    }
+    100% {
+        text-shadow: none; /* Sin sombra */
+    }
+}
+button{
+    color: #fdfdfd;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background-color: #2e9e96;
+    height: 3rem;
+    width: 8rem;
+}
+button:hover {
+    background-color: #64bbb5;
+    cursor: pointer; 
+}
+.btn-subir{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.contactButton {
+    background: #7079f0;
+    color: white;
+    font-family: inherit;
+    padding: 0.45em;
+    padding-left: 1em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3em;
+  }
+  
+  .iconButton {
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7a8cf3;
+    right: 0.3em;
+    transition: all 0.3s;
+  }
+  
+  .contactButton:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em #5566c2;
+  }
+  
+  .contactButton:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em #5566c2;
+  }
+  
+p{
+    font-size: 1.5rem;
+}
+
+.btn-shine {
+    position:relative;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -70%);
+    padding: 12px 48px;
+    color: #fff;
+    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+  }
+  @-moz-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 280px;
+    }
+  }
+  @-webkit-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    100% {
+      background-position: 280px;
+    }
+  }
+  @-o-keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 280px;
+    }
+    100% {
+      background-position: 180px;
+    }
+  }
+  @keyframes shine {
+    0% {
+      background-position: 0;
+    }
+    60% {
+      background-position: 180px;
+    }
+    200% {
+      background-position: 280px;
+    }
+  }
+  
+
+textarea{
+    font-size: 1rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: 40vw;
+    height: 20vh;
+    margin: 1rem;
+    color: rgb(43, 44, 44);
+}
+.subirArchivo{
+    text-align: center;
+    color: #227670;
+    border-radius: 2rem;
+    background-color: #000000;
+    padding: 1rem;
+    margin: 1rem;
+}
+input:hover {
+    cursor: pointer; 
+}
+#section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh; 
+}
+
+input[type="file"] {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-size: 1rem;
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fila > div {
+    background-color: white;
+    border-radius: 2rem;
+    padding: 1.25rem;
+    width: 60vw; 
+    height: 100%; 
+    margin: 0.625rem;
+    font-size: 10px;
+    box-sizing: border-box;
+}

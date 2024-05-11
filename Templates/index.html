@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Analisador | Up</title>
+</head>
+
+<body class="body">
+    <header>
+        <h1 class="titulo">Ánalizador Lexico</h1>
+    </header>
+    <main>
+        <section id="section1">
+            <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                <center>
+                    <div class="btn-subir">
+                        <input class="subirArchivo" type="file" id="file" name="file" accept=".txt">
+                        <button class="contactButton" type="submit"> Subir
+                            <div class="iconButton">
+                                <svg
+                                  height="24"
+                                  width="24"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path d="M0 0h24v24H0z" fill="none"></path>
+                                  <path
+                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                    fill="currentColor"
+                                  ></path>
+                                </svg>
+                              </div>
+                        </button>
+                    </div>
+                    <p class="btn-shine">Ingresa el código</p>
+                </center>
+            </form>
+            <form method="POST" enctype="multipart/form-data">
+                <textarea id="code" name="code" placeholder="Ingrese el token"></textarea>
+                <center>
+                    <div>
+                        <button class="contactButton" type="submit">Analizar
+                            <div class="iconButton">
+                                <svg
+                                  height="24"
+                                  width="24"
+                                  viewBox="0 0 24 24"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path d="M0 0h24v24H0z" fill="none"></path>
+                                  <path
+                                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                    fill="currentColor"
+                                  ></path>
+                                </svg>
+                              </div>
+                        </button>
+                    </div>
+                </center>
+            </form>
+        </section>
+        <div class="fila">
+            <div>
+                {% for token in tokens %}
+                <p>{{ token.type }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                {% for token in tokens %}
+                <p>Linea {{ token.line }} <br> {{ token.description }} : {{ token.value }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </main>   
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const textarea = document.getElementById('code');
+                textarea.value = e.target.result;
+            };
+            reader.readAsText(file);
+        });
+    </script>
+</body>
+</html>
